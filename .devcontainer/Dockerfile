@@ -23,22 +23,4 @@ ENV SHELL /bin/bash
 # * Anything else you want to do like clean up goes here *
 # ********************************************************
 
-RUN apt install -y \
-    ros-$ROS_DISTRO-rviz2 \
-    ros-$ROS_DISTRO-rqt \
-    ros-$ROS_DISTRO-rqt-common-plugins \
-    ros-$ROS_DISTRO-depth-image-proc
-
-RUN apt install -y \
-    gstreamer1.0-tools \
-    gstreamer1.0-libav \
-    libgstreamer1.0-dev \
-    libgstreamer-plugins-base1.0-dev \
-    libgstreamer-plugins-good1.0-dev \
-    gstreamer1.0-plugins-good \
-    gstreamer1.0-plugins-base
-
-WORKDIR /home/ws/dep
-RUN git clone https://github.com/Kinovarobotics/ros2_kortex_vision.git
-
 CMD ["/bin/bash"]
