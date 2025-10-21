@@ -41,7 +41,9 @@
         "source=${localWorkspaceFolder}/.gitignore,target=/home/ws/.gitignore,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.cache/jazzy/build,target=/home/ws/build,type=bind",
         "source=${localWorkspaceFolder}/.cache/jazzy/install,target=/home/ws/install,type=bind",
-        "source=${localWorkspaceFolder}/.cache/jazzy/log,target=/home/ws/log,type=bind"
+        "source=${localWorkspaceFolder}/.cache/jazzy/log,target=/home/ws/log,type=bind",
+        "source=${localWorkspaceFolder}/.vscode,target=/home/ws/.vscode,type=bind",
+        "source=${localWorkspaceFolder}/.cache/system/.bash_history,target=/home/admin/.bash_history,type=bind"
     ],
     "postCreateCommand": "sudo rosdep update && sudo rosdep install --from-paths src dep --ignore-src -y && sudo chown -R $(whoami) /home/ws/"
 }

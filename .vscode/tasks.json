@@ -1,0 +1,87 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "colcon",
+      "label": "colcon: build dep",
+      "args": [
+        "build",
+        "--event-handlers",
+        "console_cohesion+",
+        "--base-paths",
+        "/home/ws/dep",
+        "--install-base",
+        "/home/ws/install",
+        "--cmake-args",
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=On"
+      ],
+      "problemMatcher": [
+        "$catkin-gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "type": "colcon",
+      "label": "colcon: build src",
+      "args": [
+        "build",
+        "--symlink-install",
+        "--event-handlers",
+        "console_cohesion+",
+        "--base-paths",
+        "/home/ws/src",
+        "--install-base",
+        "/home/ws/install",
+        "--cmake-args",
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=On"
+      ],
+      "problemMatcher": [
+        "$catkin-gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "type": "colcon",
+      "args": [
+        "build",
+        "--event-handlers",
+        "console_cohesion+",
+        "--base-paths",
+        "/home/ws",
+        "--cmake-args",
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      ],
+      "problemMatcher": [
+        "$catkin-gcc"
+      ],
+      "group": "build",
+      "label": "colcon: build"
+    },
+    {
+      "type": "colcon",
+      "args": [
+        "build",
+        // "--symlink-install",
+        "--event-handlers",
+        "console_cohesion+",
+        "--base-paths",
+        "/home/ws",
+        "--cmake-args",
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      ],
+      "problemMatcher": [
+        "$catkin-gcc"
+      ],
+      "group": "build",
+      "label": "colcon: build"
+    }
+  ]
+}
