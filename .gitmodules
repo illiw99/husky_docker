@@ -1,0 +1,3 @@
+[submodule "src/husky_robot_config"]
+	path = src/husky_robot_config
+	url = git@github.com:illiw99/husky_robot_config.git
